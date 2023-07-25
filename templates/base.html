@@ -1,0 +1,52 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<script src="https://cdn.ethers.io/scripts/ethers-v4.min.js"
+		charset="utf-8"
+		type="text/javascript">
+	</script>
+	<script src="static/js/web3auth.js"></script>
+
+	<!-- CSS -->
+	<link rel="stylesheet" href="static/css/bootstrap-reboot.min.css">
+	<link rel="stylesheet" href="static/css/bootstrap-grid.min.css">
+	<link rel="stylesheet" href="static/css/blueimp-gallery.min.css">
+	<link rel="stylesheet" href="static/css/magnific-popup.css">
+	<link rel="stylesheet" href="static/css/select2.min.css">
+	<link rel="stylesheet" href="static/css/splide.min.css">
+	<link rel="stylesheet" href="static/css/main.css">
+	<!-- Favicons -->
+	<link rel="icon" type="image/png" href="static/icon/favicon.png" sizes="32x32">
+	<link rel="apple-touch-icon" href="/static/icon/favicon.png">
+	<meta name="description" content="Spaw NFT to real money">
+	<meta name="keywords" content="NFT Swap">
+	<title>NFT Swap</title>
+</head>
+<body onload=getAccount() > {% csrf_token %}
+    {%include 'headers.html'%}
+    {% block content %}
+    {% endblock %}
+	
+
+	<script defer src="static/js/jquery-3.6.0.min.js"></script>
+	<script defer src="static/js/bootstrap.bundle.min.js"></script>
+	<script defer src="static/js/smooth-scrollbar.js"></script>
+	<script defer src="static/js/blueimp-gallery.min.js"></script>
+	<script defer src="static/js/jquery.magnific-popup.min.js"></script>
+	<script defer src="static/js/select2.min.js"></script>
+	<script defer src="static/js/splide.min.js"></script>
+	<script defer src="static/js/chart.js"></script>
+	<script defer src="static/js/three.min.js"></script>
+	<script defer src="static/js/vanta.cells.min.js"></script>
+	<script defer src="static/js/main.js"></script>
+	<script defer src="static/js/web3auth.js"></script>
+
+    {% include 'footer.html'%}
+    {% include 'modal_login.html' %}
+</body>
+{{ request.user.username|json_script:"userName" }}
+</html>

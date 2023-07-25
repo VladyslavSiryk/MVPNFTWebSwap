@@ -1,0 +1,58 @@
+<!-- header -->
+<header class="header">
+	<div class="container">
+		<div class="row">
+			<div class="col-12">
+				<li class="header__content">
+					<!-- btn -->
+					<button class="header__btn" type="button" aria-label="header__nav">
+						<span></span>
+						<span></span>
+						<span></span>
+					</button>
+					<!-- end btn -->
+					<!-- logo "static/img/logo.svg" alt="" -->
+					<a href="/home" class="header__logo">
+						<img src="static/icon/logo.png" alt="" >
+					</a>
+					<!-- end logo -->
+					<!-- tagline -->
+					<span class="header__tagline"> </span>
+					<!-- end tagline -->
+					<!-- navigation -->
+					<ul class="header__nav" id="header__nav">
+						<li>
+							<a href="/home">Home</a>
+						</li>
+						<li class="dropdown header__dropdown">
+							<a class="dropdown-toggle" href="" role="button" id="dropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Swap explorer <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17,9.17a1,1,0,0,0-1.41,0L12,12.71,8.46,9.17a1,1,0,0,0-1.41,0,1,1,0,0,0,0,1.42l4.24,4.24a1,1,0,0,0,1.42,0L17,10.59A1,1,0,0,0,17,9.17Z"/></svg></a>
+							<ul class="dropdown-menu header__dropdown-menu" aria-labelledby="dropdownMenuLink2">
+								<li><a href="/swap">Swap NFT</a></li>
+								<li><a href="/ranking">Ranking</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="/about">Learn more</a>
+						</li>
+						<li class="dropdown header__dropdown">
+							<a class="dropdown-toggle" href="" role="button" id="dropdownMenuLink3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">More information <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17,9.17a1,1,0,0,0-1.41,0L12,12.71,8.46,9.17a1,1,0,0,0-1.41,0,1,1,0,0,0,0,1.42l4.24,4.24a1,1,0,0,0,1.42,0L17,10.59A1,1,0,0,0,17,9.17Z"/></svg></a>
+							<ul class="dropdown-menu header__dropdown-menu" aria-labelledby="dropdownMenuLink3">
+								<li><a href="/about">About us</a></li>
+								<li><a href="/faq">Help center</a></li>
+								<li><a href="/contacts">Contacts</a></li>
+							</ul>
+						</li>
+					</ul>
+					<!-- end navigation -->
+					<!-- wallet -->
+						<button onclick=getAccount() method = 'post' type="button"  class="header__cta open-modal" id = "connectButton">{%csrf_token%}
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19,7H18V6a3,3,0,0,0-3-3H5A3,3,0,0,0,2,6H2V18a3,3,0,0,0,3,3H19a3,3,0,0,0,3-3V10A3,3,0,0,0,19,7ZM5,5H15a1,1,0,0,1,1,1V7H5A1,1,0,0,1,5,5ZM20,15H19a1,1,0,0,1,0-2h1Zm0-4H19a3,3,0,0,0,0,6h1v1a1,1,0,0,1-1,1H5a1,1,0,0,1-1-1V8.83A3,3,0,0,0,5,9H19a1,1,0,0,1,1,1Z"/></svg>
+							<span>Connect wallet</span>
+						</button>
+					<!-- end wallet -->
+				</div>
+			</div>
+		</div>
+	</div>
+</header>
+<!-- end header -->

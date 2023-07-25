@@ -1,0 +1,91 @@
+{% if user.is_authenticated %}
+	<!-- staking -->
+	<div class="section section--article">
+		<div class="container">
+			<div class="row">
+				<div class="col-12 col-lg-6">
+					<div class="staking">
+						<div class="staking__info">
+							<p>Your wallet collections</p>
+							<div id="loading-indicator" class="header__login" style="display: none;">Loading...
+							</div>
+							<br><button onclick=reloadNft() type="button" id="collectionReload" class="header__login"> {% csrf_token %}
+								<img src="static/img/blockchain/3.png" alt="">
+								<span>Reload my NFT list</span>
+							</button></br>
+							<h2>Wallet USD value: {{user_profile_info.wallet_usd_value}}</h2>
+						</div>
+					</div>
+				</div>
+				<div class="col-12 col-lg-6">
+					<div class="staking staking--second">
+						<div class="staking__info">
+							<p>Wallet information</p>
+						</div>
+						<!-- tab content -->
+						<div class="staking__content staking__content--nephrite tab-content">
+							<div class="tab-pane fade show active" id="tab-1-1" role="tabpanel">
+								<ul class="staking__list">
+									<li>Wallet balance: <span>{{ user_profile_info.wallet_balance}}</span></li>
+									<li>Token balance: <span>{{ user_profile_info.token_balance }}</span></li>
+									<li>Token value in USD: <span> {{ user_profile_info.token_usd_value }} </span></li>
+								</ul>
+							</div>
+						</div>
+						<!-- end tab content -->
+					</div>
+				</div>
+			</div>
+			{% include 'user_collections.html'%}
+		</div>
+	</div>
+	<!-- end staking -->
+	
+
+{% else %}
+		<!-- staking -->
+		<div class="section section--article">
+			<div class="container">
+				<div class="row">
+					<div class="col-12 col-lg-6">
+						<div class="staking">
+							<div class="staking__info">
+								<p> Please, connect your wallet</p>
+							</div>
+	
+							<!-- tab navigation -->
+							<button onclick=getAccount() method = 'post' type="button"  class="header__login" id = "connectButton">{%csrf_token%}
+								<img src="static/img/blockchain/3.png" alt="">
+								<span>Connect wallet</span>
+							</button>
+							<!-- end tab navigation -->
+	
+						</div>
+					</div>
+					<div class="col-12 col-lg-6">
+						<div class="staking staking--second">
+							<div class="staking__info">
+								<h2>Wallet information</h2>
+							</div>
+	
+							<!-- tab content -->
+							<div class="staking__content staking__content--nephrite tab-content">
+								<div class="tab-pane fade show active" id="tab-1-1" role="tabpanel">
+									<ul class="staking__list">
+										<li>Wallet balance: <span>No info</span></li>
+										<li>Balance in USD: <span>No info</span></li>
+										<li>Token balance: <span>No info</span></li>
+										<li>Token value in USD: <span>No info</span></li>
+									</ul>
+								</div>
+							</div>
+							<!-- end tab content -->
+					
+						</div>
+					</div>
+				</div>
+				
+			</div>
+		</div>
+
+{% endif %}

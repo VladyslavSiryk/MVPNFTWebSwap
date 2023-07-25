@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block content %}
+<body>
+	<!-- ranking -->
+	<section class="section section--first">
+		<!-- section head -->
+		<div class="section__head">
+			<div class="container">
+				<div class="row">
+					<!-- breadcrumb -->
+					<div class="col-12">
+						<ul class="breadcrumb">
+							<li class="breadcrumb__item"><a href="index">Home</a></li>
+							<li class="breadcrumb__item breadcrumb__item--active">NFT Collections ranking</li>
+						</ul>
+					</div>
+					<!-- end breadcrumb -->
+
+					<!-- section title -->
+					<div class="col-12">
+						<div class="section__title section__title--left section__title--page">
+							<h1>Top Ethereum NFT Collections</h1>
+						</div>
+					</div>
+					<!-- end section title -->
+				</div>
+			</div>
+
+			<!-- bg animation -->
+			<div id="canvas2" class="section__canvas"></div>
+			<!-- end bg animation -->
+		</div>
+		<!-- end section head -->
+
+		{% include 'ranking_list.html'%} {% csrf_token %}
+
+		</div>
+	</section>
+	<!-- end ranking -->
+</body>
+{% endblock %}
