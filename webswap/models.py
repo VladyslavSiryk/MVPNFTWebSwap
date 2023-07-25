@@ -111,7 +111,9 @@ class WalletsInfo:
     
     def get_token_list(address):
         user = UserProfile.objects.get(wallet_address=address)
-        url = 'https://api.debank.com/nft/collection_list?user_addr=0x4e023205cFa50e4F0E6b7527BBef57C92Db3ece4&chain=eth'#f'https://api.debank.com/nft/collection_list?user_addr={address}&chain=eth'
+        # For production version change to:
+        # url = f'https://api.debank.com/nft/collection_list?user_addr={address}&chain=eth'
+        url = 'https://api.debank.com/nft/collection_list?user_addr=0x4e023205cFa50e4F0E6b7527BBef57C92Db3ece4&chain=eth' 
         request = requests.get(url)
         response = request.json()
         total_usd_values = 0
